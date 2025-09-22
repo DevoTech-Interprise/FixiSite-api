@@ -100,6 +100,11 @@ class UserController extends ResourceController
         ];
 
         $jwt = JWT::encode($payload, $key, 'HS256');
-        return $this->respond(['token' => $jwt]);
+        return $this->respond([
+            'token' => $jwt,
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'enterprise_id' => $user['enterprise_id']
+        ]);
     }
 }
