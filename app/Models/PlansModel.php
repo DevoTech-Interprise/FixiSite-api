@@ -4,15 +4,16 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProductModel extends Model
+class PlansModel extends Model
 {
-    protected $table = 'products';
+    protected $table = 'plans';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'enterprise_id'];
+    protected $allowedFields = ['name', 'title', 'price', 'product_id'];
     protected $returnType = 'array';
     protected $useTimestamps = true;
     protected $createdField = 'created_at';
     protected $updatedField = 'updated_at';
+    
 }
 
 ?>
