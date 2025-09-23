@@ -8,7 +8,7 @@ class BenefitModel extends Model
 {
     protected $table = 'benefits';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['plan_id', 'description'];
+    protected $allowedFields = ['plans_id', 'description'];
     protected $returnType = 'array';
     protected $useTimestamps = true;
     protected $createdField = 'created_at';

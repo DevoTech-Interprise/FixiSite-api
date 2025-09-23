@@ -72,11 +72,6 @@ class ProductController extends ResourceController
 
     public function delete($id = null)
     {
-        $data = request()->getJSON(true);
-        if (!$data)
-        {
-            return $this->failValidationErrors('No data provided');
-        }
 
         try {
             $this->model->delete($id);

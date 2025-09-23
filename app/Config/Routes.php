@@ -21,10 +21,13 @@ $routes->group('api', function($routes) {
     // ROTAS DE USUÁRIO E ACCOUNT // 
     $routes->resource('user', ['controller' => 'UserController', 'filter' => 'auth']);
     $routes->post('user/login', 'UserController::login');
-    // ROTAS DE USUÁRIO E ACCOUNT // 
+
 
     // ROTAS DE PRODUTOS //
     $routes->resource('product', ['controller' => 'ProductController', 'filter' => 'auth']);
-    // ROTAS DE PRODUTOS //
+
+
+    // Rota de Planos
+    $routes->resource('plan', ['controller' => 'PlansController', 'filter' => 'auth']);
 });
 
