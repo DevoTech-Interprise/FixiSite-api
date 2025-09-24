@@ -8,7 +8,7 @@ class PlansModel extends Model
 {
     protected $table = 'plans';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['name', 'title', 'price', 'product_id'];
+    protected $allowedFields = ['tenant_id', 'name', 'description', 'period', 'price', 'product_id'];
     protected $returnType = 'array';
     protected $useTimestamps = true;
     protected $createdField = 'created_at';

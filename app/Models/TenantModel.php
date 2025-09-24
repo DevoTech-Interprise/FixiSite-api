@@ -4,11 +4,11 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProductModel extends Model
+class TenantModel extends Model
 {
-    protected $table = 'products';
+    protected $table = 'tenants';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['tenant_id', 'name', 'description', 'price', 'stock'];
+    protected $allowedFields = ['name', 'domain', 'logo', 'theme', 'cpf_cnpj'];
     protected $returnType = 'array';
     protected $useTimestamps = true;
     protected $createdField = 'created_at';

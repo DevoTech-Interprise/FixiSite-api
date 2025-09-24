@@ -6,9 +6,9 @@ use CodeIgniter\Model;
 
 class BenefitModel extends Model
 {
-    protected $table = 'benefits';
+    protected $table = 'plan_benefits';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['plans_id', 'description'];
+    protected $allowedFields = ['plan_id', 'description'];
     protected $returnType = 'array';
     protected $useTimestamps = true;
     protected $createdField = 'created_at';

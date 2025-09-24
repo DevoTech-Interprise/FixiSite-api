@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\TenantController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -21,6 +22,10 @@ $routes->group('api', function($routes) {
     // ROTAS DE USUÁRIO E ACCOUNT // 
     $routes->resource('user', ['controller' => 'UserController', 'filter' => 'auth']);
     $routes->post('user/login', 'UserController::login');
+
+    //Rota de Tenant
+    $routes->resource('tenant', ['controller' => 'TenantController', 'filter' => 'auth']);
+    $routes->post('tenant/update', 'TenantController::update', ['filter' => 'auth']);
 
 
     // ROTAS DE PRODUTOS //

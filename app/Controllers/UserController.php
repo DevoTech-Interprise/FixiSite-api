@@ -104,7 +104,7 @@ class UserController extends ResourceController
             'token' => $jwt,
             'name' => $user['name'],
             'email' => $user['email'],
-            'enterprise_id' => $user['enterprise_id']
+            'tenant_id' => $user['tenant_id']
         ]);
     }
 }

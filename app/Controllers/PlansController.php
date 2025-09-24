@@ -23,7 +23,7 @@ class PlansController extends ResourceController
         $plans = $this->modelPlan->findAll();
 
         foreach ($plans as $key => $plan) {
-            $benefits = $this->modelBenefit->where('plans_id', $plan['id'])->findAll();
+            $benefits = $this->modelBenefit->where('plan_id', $plan['id'])->findAll();
             $plans[$key]['benefits'] = $benefits ?? [];
         }
 
@@ -38,7 +38,7 @@ class PlansController extends ResourceController
             return $this->failNotFound('data not found');
         }
 
-        $benefits = $this->modelBenefit->where('plans_id', $plan['id'])->findAll();
+        $benefits = $this->modelBenefit->where('plan_id', $plan['id'])->findAll();
         $plan['benefits'] = $benefits;
 
         return $this->respond($plan);
@@ -54,17 +54,12 @@ class PlansController extends ResourceController
 
         try {
             //  CRIAR O PLANO //
-            $planId = $this->modelPlan->insert([
-                'name' => $data['name'],
-                'title' => $data['title'],
-                'price' => $data['price'],
-                'product_id' => $data['product_id']
-            ]);
+            $planId = $this->modelPlan->insert($data);
 
             // VINCULAR OS BENEFICIOS //
             foreach ($data['benefits'] as $benefit) {
                 $this->modelBenefit->insert([
-                    'plans_id' => $planId,
+                    'plan_id' => $planId,
                     'description' => $benefit
                 ]);
             }
