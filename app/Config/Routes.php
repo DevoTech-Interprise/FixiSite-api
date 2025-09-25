@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\BenefitController;
 use App\Controllers\TenantController;
 use CodeIgniter\Router\RouteCollection;
 
@@ -30,6 +31,9 @@ $routes->group('api', function($routes) {
 
     // ROTAS DE PRODUTOS //
     $routes->resource('product', ['controller' => 'ProductController', 'filter' => 'auth']);
+
+    // Rotas de Benefit
+    $routes->resource('benefit', ['controller' => 'BenefitController', 'filter' => 'auth']);
 
 
     // Rota de Planos
